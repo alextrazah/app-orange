@@ -12,17 +12,27 @@ h3 {
 .box {
   padding: 60px 0px;
 }
+.gridding{
 
+    width: 250px;
+}
 .card-img-top {
   height: 100px;
   width: 30%;
 }
+.grid-containing {
+    display: grid;
+    grid-template-columns: 350px 350px 350px 350px;
+    grid-gap: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+  }
 
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
-  background-color: #2196f3;
+  background-color: #ffffff;
   padding: 10px;
 }
 
@@ -41,7 +51,7 @@ h3 {
 }
 
 .box-part:hover {
-  background: #4183d7;
+  background: #f19214;
 }
 
 .box-part:hover .fa,
@@ -66,4 +76,4 @@ h3 {
 .title {
   cursor: pointer;
 }
-/* end css for adminPanel.js*/
+

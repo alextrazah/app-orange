@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./style.css";
-import Login from "./pages/adminPanel";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
-function App() {
-  return (
-    <div className="App">
-      <Login />
-    </div>
-  );
-}
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    document.getElementById("root")
+);
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+serviceWorker.unregister();

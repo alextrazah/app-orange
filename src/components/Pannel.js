@@ -1,10 +1,9 @@
 import React, { Component } from "react";
+import Flippy from "react-flippy";
+import "./style.css";
 import "./adminPanel.css";
-function func() {
-  console.log("waaaaa3");
-}
+import Inpt from "./Minputs";
 
-export { func };
 
 class AdminPanel extends Component {
   state = {
@@ -73,21 +72,60 @@ class AdminPanel extends Component {
       );
     }
     return (
+ <div className="grid-containing" style = {{ marginLeft: '11.9rem' }}>
+<form>
+                <h4 style = {{ textAlign: 'left' }}>Orange Digital<br></br> 
+                    Center Virtual Tour</h4><h4 style = {{ color: 'orange', textAlign: 'left' }}>Tunisia</h4>
+<p style = {{ textAlign: 'left' }}>Enable and edit the active programs avatars, add a chat file and events link and don't forget to update!</p>
+                <div  style = {{ textAlign: 'left' }} className="form-group">
+                    <label>Event Link</label>
+                    <input type="text" className="form-control" placeholder="Enter link" />
+                </div>
+
+                
+
+                <button type="submit"  style = {{background:'#FF7900',color:"black",border:"20px"}}  className="btn btn-primary btn-block">Update</button>
+                
+            </form>
+     
+    
+
+
+
       <div className="container">
-        {showNav ? <nav>Your Nav(style it however your want!</nav> : null}
-        <div className="grid-container">{currentCards}</div>
+        
+        <div className="grid-container">
+            
+            
+            {currentCards}
+        
+        {showNav ? <nav>
+            <div className="gridding">
+            <Inpt/>
+            <Inpt/>
+            <Inpt/>
+            <Inpt/>
+            <Inpt/>
+            <Inpt/>
+
+            </div>
+
+        </nav> : null}
+        </div>
       </div>
+      </div>
+
     );
   }
 }
 
 export default AdminPanel;
 
-function Card({ click, show, id, text, src }) {
+function Card ({ click, show, id, text, src }) {
   if (!show) return null;
 
   return (
-    <div className="col-sm-6 ">
+    <div className="col-sm-10 ">
       <a href="#" />
 
       <div className="box-part text-center">
