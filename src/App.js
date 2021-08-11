@@ -13,7 +13,7 @@ function App() {
   return (<Router>
     <div className="App">
 
-    <Navbar  bg="dark" variant="dark">
+    <Navbar  className="navbarcolor" variant="dark">
     <div>
       <Navbar.Brand href="#home">
         <div  style = {{ marginLeft: '11.9rem' }}  className="row">
@@ -33,27 +33,15 @@ function App() {
       
     </div>
     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link className="nav-link" id="iconi" to={"/sign-in"}>En</Link>
-              </li>
-              <i className="fs fs-person-fill">
-              </i>
+            <ul className="navbar-nav ml-auto" id="iconi">
+            <a style={{color:"white"}} href="#"><h6>Fr &ensp; En &ensp;<i style={{color:"white"}} class="fa fa-fw fa-user"></i></h6></a>
 
-              <li className="nav-item">
-                <Link className="nav-link" id="iconi" to={"/Pannel"}>Fr
-                
-               
-
-                </Link>
-
-              </li>
-              <li> <AccountCircleSharpIcon id="iconi"
-                style={{fill: "white"}}/></li>
+              
             </ul>
           </div>
   </Navbar>
-     
+ 
+
   <Switch>
             
             <Route path="/Pannel" component={Pannel} />

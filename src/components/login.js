@@ -30,7 +30,7 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit"  style = {{background:'#FF7900',color:"black",border:"20px"}}  className="btn btn-primary btn-block">Submit</button>
+                <button type="submit"  style = {{background:'#FF7900',color:"black",border:"20px"}} href="/pannel"  className="btn btn-primary btn-block">Submit</button>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>

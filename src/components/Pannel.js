@@ -127,6 +127,10 @@ class AdminPanel extends Component {
 
             
             </p>
+            <button type="submit"  style = {{background:'black',color:"white",border:"20px"}}  className="btn btn-primary btn-block">Save</button>
+
+            <button type="submit"  style = {{background:'white',color:"black",border:"20px",border: "solid"}}  className="btn btn-primary btn-block">Update</button>
+
             
             
             </div>
@@ -158,7 +162,7 @@ function Card ({ click, show, id, text, src }) {
         </div>
         <div>
         
-          <button id="boutnas" >Edit Avatar</button>
+          <button id="boutnas" onClick={(e) => click(id)} >Edit Avatar</button>
         </div>
       </div>
     </div>
