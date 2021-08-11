@@ -35,23 +35,21 @@ function App() {
     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link" to={"/sign-in"}>En</Link>
+                <Link className="nav-link" id="iconi" to={"/sign-in"}>En</Link>
               </li>
               <i className="fs fs-person-fill">
               </i>
 
               <li className="nav-item">
-                <Link className="nav-link" to={"/Pannel"}>Fr
+                <Link className="nav-link" id="iconi" to={"/Pannel"}>Fr
                 
                
 
                 </Link>
 
               </li>
-              <li> <AccountCircleSharpIcon 
-                style={{fill: "black",left: "30px",bottom: "30px"}}/></li>
-              
-              
+              <li> <AccountCircleSharpIcon id="iconi"
+                style={{fill: "white"}}/></li>
             </ul>
           </div>
   </Navbar>

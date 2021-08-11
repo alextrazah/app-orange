@@ -3,6 +3,7 @@ import Flippy from "react-flippy";
 import "./style.css";
 import "./adminPanel.css";
 import Inpt from "./Minputs";
+import Drop from "./Drop";
 
 
 class AdminPanel extends Component {
@@ -19,7 +20,7 @@ class AdminPanel extends Component {
       1: {
         show: true,
         text: "Thought Archives",
-        src: "https://visualpharm.com/assets/224/Folder-595b40b85ba036ed117dd27b.svg",
+        src: "https://i.imgur.com/2WcqQ0j.png",
       },
       2: {
         show: true,
@@ -31,11 +32,7 @@ class AdminPanel extends Component {
         text: "Create New",
         src: "https://visualpharm.com/assets/375/Create-595b40b75ba036ed117d7bbf.svg",
       },
-      4: {
-        show: true,
-        text: "Your Community",
-        src: "https://static.thenounproject.com/png/5040-200.png",
-      },
+      
     },
     showNav: false,
   };
@@ -72,8 +69,8 @@ class AdminPanel extends Component {
       );
     }
     return (
- <div className="grid-containing" style = {{ marginLeft: '11.9rem' }}>
-<form>
+ <div className="grid-containing" style = {{ marginLeft: '15.9rem',marginTop: '6.9rem' }}>
+<form style = {{marginTop: '4.9rem' }}>
                 <h4 style = {{ textAlign: 'left' }}>Orange Digital<br></br> 
                     Center Virtual Tour</h4><h4 style = {{ color: 'orange', textAlign: 'left' }}>Tunisia</h4>
 <p style = {{ textAlign: 'left' }}>Enable and edit the active programs avatars, add a chat file and events link and don't forget to update!</p>
@@ -107,7 +104,32 @@ class AdminPanel extends Component {
             <Inpt/>
             <Inpt/>
             <Inpt/>
+            <div > <span className="row" style = {{ marginRight: '180px', display: 'inline',fontWeight: 'bold'}}>Chat File</span>
+            <Drop/>
+            </div>
+            <div > <span className="row" style = {{ marginRight: '180px',fontWeight: 'bold'}}>Online
+            
 
+
+
+           </span>
+            
+            <p style = {{fontSize: '11px'}}>Enable this status to add programs
+
+
+            <label style={{marginLeft:"20px",margintTop:"200px"}} className="switch">
+ 
+
+ <input type="checkbox"></input>
+ <span class="slider"></span>
+</label>
+          
+
+            
+            </p>
+            
+            
+            </div>
             </div>
 
         </nav> : null}
@@ -125,15 +147,18 @@ function Card ({ click, show, id, text, src }) {
   if (!show) return null;
 
   return (
-    <div className="col-sm-10 ">
-      <a href="#" />
+    <div style = {{ width: '250px' }} className="col-sm-11">
+<h4>Coding School</h4>
+    <h6 class="bubble bubble-outer-dot yarab"> &ensp; &ensp;  online</h6>
+    
 
       <div className="box-part text-center">
         <div className="title" onClick={(e) => click(id)}>
-          <img className="card-img-top" src={src} alt=" image" />
+          <img className="card-img-top" style = {{ width: '180px', height: '280px' }} src={src} alt="carding" />
         </div>
-        <div className="text">
-          <h2>{text}</h2>
+        <div>
+        
+          <button id="boutnas" >Edit Avatar</button>
         </div>
       </div>
     </div>
