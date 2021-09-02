@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Flippy from "react-flippy";
+//import Flippy from "react-flippy";
 import "./style.css";
 import "./adminPanel.css";
 import Inpt from "./Minputs";
@@ -53,7 +53,7 @@ class AdminPanel extends Component {
   }
 
   render() {
-    const { cards, showNav, inputs } = this.state;
+    const { cards, showNav } = this.state;
     console.log(this.state);
     let currentCards = [];
     for (let key in cards) {
@@ -76,12 +76,12 @@ class AdminPanel extends Component {
 <p style = {{ textAlign: 'left' }}>Enable and edit the active programs avatars, add a chat file and events link and don't forget to update!</p>
                 <div  style = {{ textAlign: 'left' }} className="form-group">
                     <label>Event Link</label>
-                    <input type="text" className="form-control" placeholder="Enter link" />
+                    <input style = {{color:"black",  borderRadius: "1px"}} type="text" className="form-control" placeholder="Enter link" />
                 </div>
 
                 
 
-                <button type="submit"  style = {{background:'#FF7900',color:"black",border:"20px"}}  className="btn btn-primary btn-block">Update</button>
+                <button type="submit"  style = {{background:'#FF7900',color:"black",border:"20px",  borderRadius: "1px"}}className="btn btn-primary btn-block">Update</button>
                 
             </form>
      
@@ -129,7 +129,7 @@ class AdminPanel extends Component {
             </p>
             <button type="submit"  style = {{background:'black',color:"white",border:"20px"}}  className="btn btn-primary btn-block">Save</button>
 
-            <button type="submit"  style = {{background:'white',color:"black",border:"20px",border: "solid"}}  className="btn btn-primary btn-block">Update</button>
+            <button type="submit"  style = {{background:'white',color:"black",border:"20px"}}  className="btn btn-primary btn-block">Update</button>
 
             
             
