@@ -1,14 +1,22 @@
+import { GifOutlined } from "@material-ui/icons";
 import React, { Component } from "react";
+import { useHistory } from "react-router-dom";
 
 import '../App.css';
-export default class Login extends Component {
-    
-    render() {
-        
+export default function Login()  {
+    let history = useHistory();
+
+
+    function goin(){
+        history.push("/index");
+        window.location.reload(false);
+        localStorage.setItem("Login", true);
+
+
+    }
         return (
             <div className="auth-wrapper">
             <div className="auth-inner">
-            <form>
                 <h4 style={{ fontFamily:'HelveticaNeue-Bold' ,fontSize:'16 px', textAlign:'left'}} >Orange Digital<br></br> 
                     Center Virtual Tour</h4>
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
@@ -33,10 +41,9 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit"  style = {{background:'#FF7900',color:"black",border:"20px",  borderRadius: "1px"}} href="/test"  className="btn btn-primary btn-block">Login</button>
+                <button  onClick={(e) => goin()}  style = {{background:'#FF7900',color:"black",border:"20px",  borderRadius: "1px"}}   className="btn btn-primary btn-block">Login</button>
                 
-            </form>
             </div></div>
         );
-    }
+    
 }

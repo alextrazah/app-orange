@@ -8,7 +8,7 @@ body {
   min-height: 100vh;
   display: flex;
   font-weight: 400;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6,label,span {
@@ -25,7 +25,9 @@ body, html, .App, #root, .auth-wrapper {
   background-color: #ffffff;
   box-shadow: 0px 14px 80px rgba(236, 80, 18, 0.911);
 }
-
+.vl {
+  border-left: 2px solid black;
+  height: 420px;}
 .auth-wrapper {
   display: flex;
   justify-content: center;

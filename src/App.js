@@ -9,6 +9,7 @@ import Pannel from "./components/Pannel";
 import Mytable from "./components/mytable";
 import logo from "./logo2.svg"
 import { question } from './components/question';
+import { useHistory } from "react-router-dom";
 
 
 
@@ -16,6 +17,7 @@ function App() {
   const [clr, setclr] = useState("#FF7900");
   const [clr1, setclr1] = useState("white");
 
+  let history = useHistory();
 
   return (
   
@@ -42,15 +44,37 @@ function App() {
       </Navbar.Brand>
       
     </div>
-    <div  style={{marginRight: '20rem'}} className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav ml-auto" id="iconi">
-     
-            <a style={{color:clr, cursor : 'pointer', fontFamily:'HelveticaNeue-Bold' ,fontSize:'16 px' ,marginTop:"35px"
+
+
+                    
+    {localStorage.Login && (
+      <>
+      <a style={{color:clr, cursor : 'pointer', fontFamily:'HelveticaNeue-Bold' ,fontSize:'16 px' ,marginTop:"46px",marginLeft:"186px"
 }} onMouseEnter={() => {
        setclr("#FF7900");
     }}  onMouseLeave={() => {
       setclr("#FF7900");
     }}  >Setup </a>
+    
+
+
+<a style={{color:clr, cursor : 'pointer', fontFamily:'HelveticaNeue-Bold' ,fontSize:'16 px' ,marginTop:"46px",marginLeft:"65px"
+}} onMouseEnter={() => {
+       setclr("#FF7900");
+    }}  onMouseLeave={() => {
+      setclr("#FF7900");
+    }}  >index </a>
+   </>
+                  )}     
+  
+  
+  
+
+
+    <div  style={{marginRight: '20rem'}} className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav ml-auto" id="iconi">
+     
+            
 
 
 
@@ -67,7 +91,7 @@ function App() {
 
 
     <a href="#"  onClick={() => {
-       console.log("fr");
+       console.log(localStorage.Login);localStorage.clear();
     }} style={{color:clr1, cursor : 'pointer', fontFamily:'HelveticaNeue-Bold' ,fontSize:'16 px' ,marginTop:"35px"
 }} onMouseEnter={() => {
        setclr1("#FF7900");
@@ -77,13 +101,21 @@ function App() {
      &ensp;  &ensp;
 
 
-          <i style={{color:"white",marginTop:"35px"}} class="fa fa-fw fa-user"></i>
+          <i style={{color:"white",marginTop:"35px",cursor : 'pointer'}} onClick={() => {
+            localStorage.clear();
+      history.push("/");
+        window.location.reload(false);
+    }}  className="fa fa-fw fa-user"></i>
 
           <hr style={{border:"2px solid #FF7900" ,width:"10px",marginLeft:"-72px",marginTop:"60px"}}></hr>
+          {localStorage.Login && (
+      <>
+          <hr style={{border:"2px solid #FF7900" ,width:"60px",marginLeft:"-1000px",marginTop:"60px"}}></hr>
 
-          <hr style={{border:"2px solid #FF7900" ,width:"60px",marginLeft:"-980px",marginTop:"60px"}}></hr>
+          <hr style={{border:"2px solid #FF7900" ,width:"60px",marginLeft:"-370px",marginTop:"60px"}}></hr>
 
-              
+              </>
+          )} 
 
 
 

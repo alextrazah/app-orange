@@ -6,8 +6,9 @@ import SortIcon from '@material-ui/icons/ImportExport';
 import movies from "./movies";
 import "./table.css";
 import Fab from '@material-ui/core/Fab';
-
-import Button from "@material-ui/core/Button";
+import { Modal } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button'
+import Buttons from "@material-ui/core/Button";
 import StarIcon from '@material-ui/icons/Star';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,6 +17,10 @@ import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 export default function App() {
   const [button, setButton] = React.useState("Click");
   //const [lang, setLang] = React.useState(0);
+  const [show, setShow] = React.useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const styles = theme => ({
     fab: {
       margin: "2px",
@@ -69,15 +74,14 @@ borderRadius: "45px",
         button: true,
       },
       {
-        cell:(row) =><Fab variant="extended" aria-label="Delete" className={classes.fab}>
+        cell:(row) =><Fab onClick={handleShow} variant="extended" aria-label="Delete" style = {{color:"white",width:"110px",height:"35px",outline:"0"}} >
         
         <HelpOutlineIcon className={classes.extendedIcon} > Questions</HelpOutlineIcon>
         Questions
         
       </Fab>,
         ignoreRowClick: true,
-        allowOverflow: true,
-        button: true,
+        allowOverflow: false,
       }
   ];
 function handleButtonClick (state) {
@@ -92,7 +96,72 @@ function handleButtonClick (state) {
  
   console.log("Reader");
   return (
-    <div style={{width:"1100px",marginLeft:"200px",marginTop:"-50px"}} className="App">
+    <>
+<Modal      style = {{ borderRadius: "1px"}}   show={show}
+        onHide={() => setShow(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title" >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+        <div class="container">
+  <div class="row">
+    <div class="col-sm">
+    <h6 style={{color:"#FF7900"}}>Session N°9324 </h6>
+    
+    
+    
+    <div className="form-group">
+                    <label >Fullname</label>
+                    <input style = {{ borderRadius: "1px"}}type="text" className="form-control" placeholder="Enter email" />
+                </div>
+                <div className="form-group">
+                    <label> Profession</label>
+                    <input style = {{ borderRadius: "1px"}} type="text" className="form-control" placeholder="Enter email" />
+                </div>
+                <div className="form-group">
+                    <label> Email</label>
+                    <input  style = {{ borderRadius: "1px"}}type="email" className="form-control" placeholder="Enter email" />
+                </div>
+                <div className="form-group">
+                    <label>Label</label>
+                    <input  style = {{ borderRadius: "1px"}}type="email" className="form-control" placeholder="Enter email" />
+                </div>
+                <div className="form-group">
+                    <label>Label</label>
+                    <input  style = {{ borderRadius: "1px"}}type="email" className="form-control" placeholder="Enter email" />
+                </div>
+                <button className="form-control"   style = {{background:'white',color:"black",border:"20px",borderBlockColor:"black",  borderRadius: "1px",marginBottom:"-100px"}}   className="btn btn-primary btn-block">Send mail</button>
+
+
+               
+       </div>
+       <div class="vl"></div>
+
+    <div class="col-sm">
+<h6>Question</h6>
+<p> Aenean nec iaculis ex, vitae ornare eros. Integer tincidunt arcu sed ornare congue. Fusce eu urna mauris. Morbi dui magna, egestas id massa at, vulputate sodales orci. Pellentesque ultrices varius accumsan?</p>
+   
+  
+    </div>
+    
+  </div>
+</div>
+
+
+        </Modal.Body>
+        <Modal.Footer>
+
+          <Button  style = {{background:'#FF7900',color:"black",border:"20px",  borderRadius: "1px"}} variant="secondary" onClick={handleClose}>
+          Send mail
+          </Button>
+         
+        </Modal.Footer>
+      </Modal>
+    <div style={{width:"1100px",marginLeft:"200px",marginTop:"-10px"}} className="App">
+
       <Card>
         <DataTable
           columns={columns}
@@ -110,6 +179,7 @@ function handleButtonClick (state) {
       </Card>
 
     </div>
+    </>
   );
 }
 
